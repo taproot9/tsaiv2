@@ -26,6 +26,48 @@
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+    <style>
+        .myContainer {
+            position: inherit;
+            width: 100%;
+            height:200px;
+            margin: auto;
+        }
+
+        .image {
+            margin:auto;
+            opacity: 1;
+            display: inline;
+            width: auto;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: relative;
+            top: -75px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%)
+        }
+
+        .myContainer:hover .image {
+            opacity: 0.3;
+        }
+
+        .myContainer:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+        }
+    </style>
 
 </head>
 <body class="size-1140">
