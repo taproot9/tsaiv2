@@ -15,8 +15,50 @@
     <div id="content">
 
         <div class="line">
-            <a class="button rounded-full-btn margin-bottom right" href="#"><span class="icon-sli-plus pull-right"></span></a>
+            <a class="button rounded-full-btn margin-bottom right" href="#"><span class="icon-sli-plus pull-right" onclick="document.getElementById('add_gallery').style.display='block'"></span></a>
         </div>
+
+        <div id="add_gallery" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+
+
+                <div style="border-radius: 5px; background-color: #f2f2f2; padding: 20px">
+                    <form action="/action_page.php">
+
+                        <img src="http://placehold.it/100x100" id ="showimages" style="max-width:200px;max-height:200px;margin-right: auto;margin-left: auto"/>
+
+                        <br>
+
+                        <input type="file" id="fname" name="firstname" placeholder="Title..">
+
+                        <br>
+                        <br>
+
+                        <label for="title">Title</label>
+                        <input type="text" id="title" name="firstname" placeholder="Title..">
+
+                        <label for="lname">Description</label>
+                        <textarea id="lname" placeholder="Text here ..."></textarea>
+
+                        {{--<label for="country">Country</label>--}}
+                        {{--<select id="country" name="country">--}}
+                            {{--<option value="australia">Australia</option>--}}
+                            {{--<option value="canada">Canada</option>--}}
+                            {{--<option value="usa">USA</option>--}}
+                        {{--</select>--}}
+
+                        <input style="width: 25%" type="submit" value="Submit">
+                        <button onclick="document.getElementById('add_gallery').style.display='none'" type="button" class="w3-button w3-green w3-large" style="width: 25%">Cancel</button>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+
 
         <div class="line">
             <div class="margin">
