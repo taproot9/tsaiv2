@@ -7,6 +7,8 @@
 
     {{--<link rel="stylesheet" href="{{asset("tsai_bootstrap/css/bootstrap.min.css")}}">--}}
 
+    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
+
     <link rel="stylesheet" href="{{asset("tsai_bootstrap/css/components.css")}}">
     <link rel="stylesheet" href="{{asset("tsai_bootstrap/css/icons.css")}}">
     <link rel="stylesheet" href="{{asset("tsai_bootstrap/css/responsee.css")}}">
