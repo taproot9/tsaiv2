@@ -26,22 +26,24 @@
             <div class="margin" id="offers_list">
 
 
-                <div class="l-12">
-                    <div class="s-12 m-12 l-12">
-                        <div class="s-12 m-8 l-4">
-                            <h2 style="text-align: left" class="s-12 m-8 l-4">Titles</h2>
-                                <img class="image" src="{{asset('tsai_bootstrap/img/second.jpg')}}" alt="Avatar"
-                                     class="image">
-                        </div>
-                        <div class="s-12 m-8 l-8">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                            <a href="">
-                                <span onclick="hide(); return false">Details</span>
-                            </a>
-                        </div>
+                <div class="main-container">
+                    <img src="room.png" class="room-thmbnl">
+
+                    <div class="sub-container1">
+                        <span class="hotel-name">crown regenct suites & residences - mactan</span><br>
+                        <span class="promo-name">Romantic Getaway (Mactan, Cebu)</span>
+                        <hr class="horizontal-line">
+                        <p class="promo-desc">Enjoy 3 days 2 nights of some sweet lovin' in our Mediterranean-inspired property, Crown Regency Suites Residences in Mactan, Cebu. Let us pamper you with romantic candlelit meals, first-class suite accommodations, and a complimentary bottle of wine.</p>
                     </div>
+
+                    <div class="sub-container2">
+                        <span class="price-label">price</span><br>
+                        <span class="price-tag">P13,100.00</span><br>
+                        <span class="info">Inclusive of VAT and local tax.</span> <br>
+                        <button type="button" class="btn btn-success" id="ovride-btn-success"><span class="glyphicon glyphicon-bed"></span>&nbsp&nbspBook Now</button>
+                        <button type="button" class="btn btn-default" id="ovride-btn-default"><span class="glyphicon glyphicon-menu-right"></span></button>
+                    </div>
+
                 </div>
 
             </div>

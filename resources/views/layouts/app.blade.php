@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress JSAnnotator -->
 <html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
@@ -16,7 +17,7 @@
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
-            'csrfToken' => csrf_token(),
+                'csrfToken' => csrf_token(),
         ]) !!};
     </script>
 </head>

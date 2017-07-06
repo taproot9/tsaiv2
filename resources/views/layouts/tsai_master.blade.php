@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="{{asset("tsai_bootstrap/css/responsee.css")}}">
     <link rel="stylesheet" href="{{asset("tsai_bootstrap/owl-carousel/owl.carousel.css")}}">
     <link rel="stylesheet" href="{{asset("tsai_bootstrap/owl-carousel/owl.theme.css")}}">
-{{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
-<!-- CUSTOM STYLE -->
+    {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--}}
+    <!-- CUSTOM STYLE -->
     <link rel="stylesheet" href="{{asset("tsai_bootstrap/css/custom_css.css")}}">
     <link rel="stylesheet" href="{{asset("tsai_bootstrap/css/template-style.css")}}">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -194,5 +194,4 @@
 </script>
 </body>
 </html>
-
 
