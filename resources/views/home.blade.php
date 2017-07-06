@@ -92,9 +92,9 @@
                         </p>
 
                         {{--<a href="#openModal" class="button s-12 l-4 center">Book Now</a>--}}
-                        <button style="border-radius: 10px" onclick="document.getElementById('id01').style.display='block'" class="button s-12 l-4 center">Book Now</button>
+                        <button style="border-radius: 10px" onclick="document.getElementById('bookNow').style.display='block'" class="button s-12 l-4 center">Book Now</button>
 
-                        <div id="id01" class="w3-modal">
+                        <div id="bookNow" class="w3-modal">
                             <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
                                 <br>
@@ -203,13 +203,8 @@
                                 </form>
 
                                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                                    {{--<div class="w3-container">--}}
-                                    {{--<button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>--}}
-                                    {{--<span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>--}}
-
-                                    <a href="https://www.w3schools.com" class="w3-btn w3-green" style="width: 25%; border-radius: 10px">Ok</a>
-                                    {{--<a href="https://www.w3schools.com" class="w3-btn w3-green" style="width: 30%">Cancel</a>--}}
-                                    <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-green" style="width: 25%">Cancel</button>
+                                        <button onclick="document.getElementById('bookNow').style.display='none'" type="button" class="w3-button w3-green" style="width: 25%; border-radius: 10px">Submit</button>
+                                        <button onclick="document.getElementById('bookNow').style.display='none'" type="button" class="w3-button w3-green" style="width: 25%; border-radius: 10px">Cancel</button>
                                 </div>
 
                             </div>
