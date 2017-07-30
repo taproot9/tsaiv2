@@ -12,28 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('/home/home');
 });
 
 
 Route::get('/gallery', function () {
-    return view('gallery');
+    return view('/gallery/gallery');
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('/contact/contact');
 });
 
 Route::get('/product', function () {
-    return view('product');
+    return view('/product/product');
 });
 
 Route::get('/policies', function () {
-    return view('policies');
+    return view('/policies/policies');
 });
 
 Route::get('/offers', function() {
-    return view( 'offers');
+    return view( '/offers/offers');
 });
 
 
