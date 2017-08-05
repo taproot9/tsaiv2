@@ -52,6 +52,8 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
         ],
 
         'pgsql' => [

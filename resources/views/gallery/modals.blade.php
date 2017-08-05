@@ -89,31 +89,71 @@
 <div id="edit_gallery" class="w3-modal" data-toggle="modal" data-target="#myModal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
         <div style="border-radius: 5px; background-color: #f2f2f2; padding: 20px">
-            <form action="/action_page.php">
+            {!! Form::open(['method'=>'POST','action'=>'GalleryController@addGallery','files' => true]) !!}
 
-                <img src="http://placehold.it/100x100" id ="showimages" style="max-width:200px;max-height:200px;margin-right: auto;margin-left: auto"/>
+            {{csrf_field()}}
 
-                <br>
+            <img src="http://via.placeholder.com/350x150" id ="showimages" style="max-width:200px;max-height:200px;margin-right: auto;margin-left: auto"/>
 
-                <input type="file" id="fname" name="firstname" placeholder="Title..">
+            <br>
+            {!! Form::file('photo_name', ['id'=>'inputimages']) !!}
 
-                <br>
-                <br>
+            <br>
+            <br>
 
-                <label for="title">Title</label>
-                <input type="text" id="title" name="firstname" placeholder="Title..">
+            {!! Form::label('title', 'Title') !!}
+            {!! Form::text('title', null,['placeholder' => 'Title...']) !!}
 
-                <label for="lname">Description</label>
-                <textarea id="lname" placeholder="Text here ..."></textarea>
 
-                {{--<label for="country">Country</label>--}}
-                {{--<select id="country" name="country">--}}
-                    {{--<option value="australia">Australia</option>--}}
-                    {{--<option value="canada">Canada</option>--}}
-                    {{--<option value="usa">USA</option>--}}
-                    {{--</select>--}}
+            {!! Form::label('description', 'Description') !!}
+            {!! Form::textarea('description', null,['placeholder' => 'Description...']) !!}
 
-                <a class="button rounded-full-btn submit-btn margin-bottom" href="#" data-dismiss="modal"><i class="icon-check"></i> Submit </a>
+            {!! Form::submit('Submit', ['class'=>'button rounded-full-btn submit-btn margin-bottom']) !!}
+
+            {{--<a class="button rounded-full-btn submit-btn margin-bottom" href="#" data-dismiss="modal" id="boter_is_real"><i class="icon-check"></i> Submit </a>--}}
+            <a class="button rounded-full-btn cancel-btn margin-bottom" href="#" data-dismiss="modal"><i class="icon-cross_mark"></i> Cancel </a>
+
+            {{--<label for="lname">Description</label>--}}
+            {{--<textarea id="lname" placeholder="Text here ..."></textarea>--}}
+
+            {{--@if(count($errors)>0)--}}
+            {{--<div class="alert alert-danger">--}}
+                {{--<ul>--}}
+                    {{--@foreach($errors->all() as $error)--}}
+                    {{--<li>{{$error}}</li>--}}
+                    {{--@endforeach--}}
+                    {{--</ul>--}}
+
+                {{--</div>--}}
+            {{----}}
+            {{----}}
+            {{--@endif--}}
+
+            {!! Form::close() !!}
+
+
+<!--            <label for="file-input">-->
+<!--                <img id ="photo_name" type="file" style="max-width:200px; max-height:200px;margin-right: auto;margin-left: auto"/>-->
+<!--            </label>-->
+<!--            <input id="file-input" type="file" hidden="true"/>-->
+<!--<!--                <input type="file" id="fname" name="firstname" placeholder="Title..">-->-->
+<!---->
+<!--                <br>-->
+<!--                <br>-->
+<!--                <label for="title">Title</label>-->
+<!--                <input type="text" id="title" name="title" placeholder="Title.." value="">-->
+<!--                <input type="text" name="bookId" id="bookId" value=""/>-->
+<!--                <label for="lname">Description</label>-->
+<!--                <textarea id="description" placeholder="Text here ..."></textarea>-->
+<!---->
+<!--                {{--<label for="country">Country</label>--}}-->
+<!--                {{--<select id="country" name="country">--}}-->
+<!--                    {{--<option value="australia">Australia</option>--}}-->
+<!--                    {{--<option value="canada">Canada</option>--}}-->
+<!--                    {{--<option value="usa">USA</option>--}}-->
+<!--                    {{--</select>--}}-->
+
+                <a class="button rounded-full-btn submit-btn margin-bottom" href="#" data-dismiss="modal" data-target="#edit_gallery_sumbit"><i class="icon-check"></i> Submit </a>
                 <a class="button rounded-full-btn cancel-btn margin-bottom" href="#" data-dismiss="modal"><i class="icon-cross_mark"></i> Cancel </a>
 
             </form>
