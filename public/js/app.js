@@ -73,49 +73,82 @@
 /**
  * Created by marimardelacerna on 30/07/2017.
  */
-// $("#edit_gallery").click(function(){
-//
-//     var club_id = $(this).attr("data-content");
-//     console.log(club_id)
-//
-// });
+$(":button").click(function () {
+    $(".gallery_id").hide();
+    var id_check = this.id;
+    console.log(id_check);
+    try {
+        var club_id = $(this).attr("data-content");
+        obj = JSON && JSON.parse(club_id) || $.parseJSON(club_id);
+    } catch (e) {}
 
-$("#edit_gal").click(function () {
+    switch (id_check) {
 
-    var club_id = $(this).attr("data-content");
-    obj = JSON && JSON.parse(club_id) || $.parseJSON(club_id);
-    console.log(club_id);
-    console.log(obj.title);
-    $("#id").val(obj.id);
-    $("#photo_name").attr("src", obj.photo_name);
-    $("#title").attr("value", obj.title);
-    $(".modal-body #bookId").val(obj.photo_name);
-    $("#description").val(obj.description);
+        case 'add_item':
+            break;
+        case 'details_item':
+            $("#detail_photo_name").attr("src", obj.photo_name);
+            $("#detail_title").text(obj.title);
+            $("#detail_description").text(obj.description);
+            break;
+        case 'edit_item':
+            $(".gallery_id").val(obj.id);
+            $(".photo_name").attr("src", obj.photo_name);
+            $(".title").attr("value", obj.title);
+            $(".description").val(obj.description);
+            break;
+        case 'delete_item':
+            $(".gallery_id").val(obj.id);
+            break;
+        case 'add_cancel':
+            $("#add_gallery").modal('toggle');
+            break;
+        case 'edit_cancel':
+            $("#edit_gallery").modal('toggle');
+            break;
+        case 'delete_cancel':
+            $("#delete_gallery").modal('toggle');
+            break;
+        case 'details_cancel':
+            $("#details_gallery").modal('toggle');
+            break;
+        default:
+    }
 });
-// $("#edit_gallery_sumbit").click(function(){
-//
-//     var club_id = $(this).attr("data-content");
-//     console.log(club_id)
-//
-// });
 
-
-$("#add_gallery").click(function () {
-    // action goes here!!
-    console.log("boter is real");
-});
-
-function readURL(input) {
+function readURL(input, check) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-        reader.onload = function (e) {
-            $('#showimages').attr('src', e.target.result);
-        };
-        reader.readAsDataURL(input.files[0]);
+        if (check == 'add_image') {
+            reader.onload = function (e) {
+                $('.photo_name').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        } else {
+            reader.onload = function (e) {
+                $('.photo_name').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
     }
 }
-$("#inputimages").change(function () {
-    readURL(this);
+
+$("#input_image_add").change(function () {
+    readURL(this, 'add_image');
+});
+$("#input_image_edit").change(function () {
+    readURL(this, 'edit_image');
+});
+
+$("p").bind("click", function (event) {
+    var str = "( " + event.pageX + ", " + event.pageY + " )";
+    $("span").text("Click happened! " + str);
+});
+$("p").bind("dblclick", function () {
+    $("span").text("Double-click happened in " + this.nodeName);
+});
+$("p").bind("mouseenter mouseleave", function (event) {
+    $(this).toggleClass("over");
 });
 
 /***/ }),

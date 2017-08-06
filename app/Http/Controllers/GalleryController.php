@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Gallery;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
 class GalleryController extends Controller
 {
@@ -35,8 +36,6 @@ class GalleryController extends Controller
 //            return redirect('/login');
 //        }
 
-
-
         $this->validate($request, [
             'title' =>'required'
         ]);
@@ -52,18 +51,44 @@ class GalleryController extends Controller
        Gallery::create($input);
 
       return redirect('/gallery');
-
     }
 
-    protected function deleteGallery($id)
+    protected function editGallery(Request $request)
     {
-        $gallery = Gallery::findOrFail($id);
+        $input = $request->all();
+
+        $input['price']= 27.00;
+        if ($file = $request->file('photo_name')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('post_owner_images', $name);
+            $input['photo_name'] = $name;
+        }
+
+        Gallery::whereId($input['id'])->first()->update($input);
+
+        return redirect('/gallery');
+    }
+
+    protected function deleteGallery(Request $request)
+    {
+
+        $gallery = Gallery::findOrFail($request['id']);
 
         unlink(public_path($gallery->photo_name));
 
         $gallery->delete();
         return redirect('/gallery');
     }
+
+//    protected function deleteGallery($id)
+//    {
+//        $gallery = Gallery::findOrFail($id);
+//
+//        unlink(public_path($gallery->photo_name));
+//
+//        $gallery->delete();
+//        return redirect('/gallery');
+//    }
 
     /**
      * Store a newly created resource in storage.
@@ -132,9 +157,6 @@ class GalleryController extends Controller
         Gallery::whereId($id)->first()->update($input);
 
         return redirect('/gallery');
-
-
-
     }
 
     /**

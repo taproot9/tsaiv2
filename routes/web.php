@@ -24,9 +24,11 @@ Route::get('/', function () {
 
 Route::get('/gallery', 'GalleryController@index');
 Route::post('/gallery/addGallery', 'GalleryController@addGallery');
-Route::get('/gallery/delete/{id}', 'GalleryController@deleteGallery');
-Route::get('/gallery/{id}/edit_post', 'GalleryController@edit_post');
-Route::patch('/gallery/{id}', 'GalleryController@update_post');
+Route::post('/gallery/editGallery', 'GalleryController@editGallery');
+Route::post('/gallery/deleteGallery', 'GalleryController@deleteGallery');
+//Route::get('/gallery/delete/{id}', 'GalleryController@deleteGallery');
+//Route::get('/gallery/{id}/edit_post', 'GalleryController@edit_post');
+//Route::patch('/gallery/{id}', 'GalleryController@update_post');
 
 
 Route::get('/contact', function () {

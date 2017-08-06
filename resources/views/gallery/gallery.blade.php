@@ -8,54 +8,42 @@
     </div>
 </div>
 
-
-{{--<i class="size-960 icon-sli-plus right" style="margin: 2.5%"></i>--}}
-
-
 <div id="content">
 
     <div class="line">
-        <!--            <a class="button rounded-full-btn margin-bottom right" href="#"><span class="icon-sli-plus pull-right"></span></a>-->
-        <a class="button rounded-full-btn margin-bottom right" href="#" data-toggle="modal" data-target="#add_gallery">
+        <button class="button rounded-full-btn margin-bottom right" data-toggle="modal" id="add_item" data-target="#add_gallery">
             <img src="{{asset('tsai_bootstrap/img/ic_add_white_24dp_1x.png')}}">
-        </a>
+        </button>
     </div>
-
-
 
     <div class="line">
         <div class="margin">
+
             @foreach($galleries as $gallery)
-            <div class="s-12 m-6 l-4">
-                <h2 style="text-align: left">{{$gallery->title}}</h2>
+
+            <div class="s-12 m-6 l-4" style="margin:5px 0px 5px 0px">
                 <div class="myContainer">
                     <img src="{{asset($gallery->photo_name)}}" alt="Avatar"
                          style="height: inherit;margin-right: auto; margin-left: auto; position: relative">
                     <div class="middle">
                         <!--                                {{--<a  class="button rounded-full-btn submit-btn margin-bottom" data-toggle="modal" data-target="#edit_gallery" data_value="{{$gallery->id }}">--}}-->
-                        <a class="button rounded-full-btn submit-btn margin-bottom" id="edit_gal" data-target="#edit_gallery"
-                           data-toggle="modal" data-content="{{$gallery}}">
-
-
-                            <!--                                    href="{{action('GalleryController@edit_post', [$gallery->id])}}"-->
+                        <button class="button rounded-full-btn submit-btn margin-bottom" id="edit_item" data-target="#edit_gallery" data-toggle="modal" data-content="{{$gallery}}">
                             <img src="{{asset('tsai_bootstrap/img/ic_mode_edit_white_24dp_1x.png')}}">
-                        </a>
+                        </button>
                         <!--                                {{--<a class="button rounded-full-btn cancel-btn margin-bottom" data-toggle="modal" data-target="#delete_gallery" href="{{action('GalleryController@deleteGallery', [$gallery->id])}}">--}}-->
-                        <a class="button rounded-full-btn cancel-btn margin-bottom"
-                           href="{{action('GalleryController@deleteGallery', [$gallery->id])}}">
+                        <button class="button rounded-full-btn cancel-btn margin-bottom" id="delete_item" data-target="#delete_gallery" data-toggle="modal" data-content="{{$gallery}}">
                             <img src="{{asset('tsai_bootstrap/img/ic_delete_forever_white_24dp_1x.png')}}">
-                        </a>
+                        </button>
                     </div>
                 </div>
-
+                <h2 style="text-align: left">{{$gallery->title}}</h2>
                 {{$gallery->description}}
                 <br>
-                <a href="">
-                    <span onclick="hide(); return false">Details</span>
-                </a>                </p>
+                <button id="details_item" data-target="#details_gallery" data-toggle="modal" data-content="{{$gallery}}">
+                    <span>Details</span>
+                </button>
             </div>
             @endforeach
-
         </div>
     </div>
 
@@ -95,6 +83,6 @@
     </div>
 </div>
 
-<!--@include('gallery.modals')-->
+@include('gallery.modals')
 @endsection
 
